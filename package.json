@@ -1,6 +1,6 @@
 {
   "name": "pg-helpers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helpers for quering a postgres database",
   "main": "lib/index.js",
   "scripts": {
