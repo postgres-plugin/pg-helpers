@@ -19,11 +19,12 @@ test('Attempt to execute a query with a wrong pool (wrong db)', function (t) {
   var pool = new pg.Pool(config);
 
   pool.on('error', function () {
-    pool.end(t.end);
+    pool.end();
   });
   query('select * from tags', pool, function (error, response) {
     t.ok(error, 'The query return an error if the pool is null');
     t.ok(response === null, 'The response is null');
+    t.end();
   });
 });
 
