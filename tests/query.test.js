@@ -41,7 +41,7 @@ test('Attempt to execute a wrong query', function (t) {
 
   query('wrong * query', pool, function (error, response) {
     t.ok(error, 'The query return an error if the query is wrong');
-    t.ok(response === null, 'The response is null');
+    t.equal(response, undefined, 'The response is null'); // eslint-disable-line
     pool.end(t.end);
   });
 });
